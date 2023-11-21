@@ -1,43 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+    <title>Zenith Interiors</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Poppins", sans-serif
+        }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        body {
+            font-size: 16px;
+        }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        .w3-half img {
+            margin-bottom: -6px;
+            margin-top: 16px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        footer {
+        display: none!important;
+        }
+        .w3-half img:hover {
+            opacity: 1;
+        }
+        .w3-right {
+          display: none;
+        }
+        .w3-red, .w3-hover-red:hover {
+    color: #fff!important;
+    background: linear-gradient(to bottom, #1c5fb5, #5ab0e9de);
+}
+
+.w3-text-red, .w3-hover-text-red:hover {
+    color: #167cff!important;
+}
+.w3-round, .w3-round-medium {
+    border-radius: 4px;
+    color: black;
+     border: 5px solid #0e0404 !important;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+        id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()"
+            class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>Zenith Design</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+            <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Showcase</a>
+            <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a>
+            <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Designers</a>
+            <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Packages</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+        <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+        <span>Zenith Design</span>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+        <!-- Header -->
+        <div class="w3-container" style="margin-top:80px" id="showcase">
+            <h1 class="w3-jumbo"><b>Design to Experience</b></h1>
+            <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+        </div>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+            <div class="w3-half">
+                <img src="https://www.w3schools.com/w3images/kitchenconcrete.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Modern Kitchen Design">
+                <img src="https://www.w3schools.com/w3images/livingroom.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Contemporary Living Room">
+                <img src="https://www.w3schools.com/w3images/diningroom.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Elegant Dining Room">
+            </div>
+
+            <div class="w3-half">
+                <img src="https://www.w3schools.com/w3images/atrium.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Atrium with Natural Light">
+                <img src="https://www.w3schools.com/w3images/bedroom.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Cozy Bedroom">
+                <img src="https://www.w3schools.com/w3images/livingroom2.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Scandinavian Living Room">
+            </div>
+        </div>
+
+        <!-- Modal for full-size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class="w3-container" id="services" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>Services.</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+            <p>Welcome to our Interior Design Studio, where we focus on creating spaces that reflect your
+                lifestyle and preferences.</p>
+            <p>Our services include:</p>
+            <ul>
+                <li>Customized floor planning</li>
+                <li>Personalized design consultations</li>
+                <li>10 hours of dedicated support</li>
+                <li>Professional photography services</li>
+                <li>Exclusive discounts on furniture</li>
+            </ul>
+        </div>
+
+        <!-- Designers -->
+        <div class="w3-container" id="designers" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>Designers.</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+            <p>Meet our talented team of designers who are passionate about transforming spaces:</p>
+            <p><b>Our designers are thoughtfully chosen:</b></p>
+        </div>
+
+        <!-- The Team -->
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="https://www.w3schools.com/w3images/team2.jpg" alt="John" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Richard H.</h3>
+                        <p class="w3-opacity">Lead Designer</p>
+                        <p>With a keen eye for detail, Richard brings a wealth of experience to our design
+                            projects.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Ashley Will</h3>
+                        <p class="w3-opacity">Interior Architect</p>
+                        <p>Ashley combines functionality and aesthetics to create spaces that resonate
+                            with clients.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Mike Ross</h3>
+                        <p class="w3-opacity">Senior Decorator</p>
+                        <p>Mike specializes in curating elements that reflect the client's personality
+                            and style.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Packages / Pricing Tables -->
+        <div class="w3-container" id="packages" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+            <p>Choose from our carefully crafted packages that cater to your unique design needs:</p>
+        </div>
+
+        <div class="w3-row-padding">
+            <div class="w3-half w3-margin-bottom">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Essential</li>
+                    <li class="w3-padding-16">Custom Floorplanning</li>
+                    <li class="w3-padding-16">10 hours of Design Support</li>
+                    <li class="w3-padding-16">Professional Photography</li>
+                    <li class="w3-padding-16">20% Furniture Discount</li>
+                    <li class="w3-padding-16">Exclusive Deals</li>
+                    <li class="w3-padding-16">
+                        <h2>$ 199</h2>
+                        <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Get Started</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-half">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-red w3-xlarge w3-padding-32">Premium</li>
+                    <li class="w3-padding-16">Custom Floorplanning</li>
+                    <li class="w3-padding-16">50 hours of Design Support</li>
+                    <li class="w3-padding-16">Professional Photography</li>
+                    <li class="w3-padding-16">50% Furniture Discount</li>
+                    <li class="w3-padding-16">Special Deals</li>
+                    <li class="w3-padding-16">
+                        <h2>$ 249</h2>
+                        <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                        <button class="w3-button w3-white w3-padding-large w3-hover-black">Get Started</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="w3-container" id="contact" style="margin-top:75px">
+            <h1 class="w3-xxxlarge w3-text-red"><b>Contact.</b></h1>
+            <hr style="width:50px;border:5px solid red" class="w3-round">
+            <p>Ready to transform your space? Fill out the form below, and we'll get in touch with you
+                shortly:</p>
+            <form action="/contact.php" method="post">
+                <div class="w3-section">
+                    <label>Name</label>
+                    <input class="w3-input w3-border" type="text" name="Name" required>
+                </div>
+                <div class="w3-section">
+                    <label>Email</label>
+                    <input class="w3-input w3-border" type="email" name="Email" required>
+                </div>
+                <div class="w3-section">
+                    <label>Message</label>
+                    <textarea class="w3-input w3-border" name="Message" required></textarea>
+                </div>
+                <button type="submit"
+                    class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+            </form>
+        </div>
+
+        <!-- End page content -->
+    </div>
+
+    <!-- W3.CSS Container -->
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+        <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
+                target="_blank" class="w3-hover-opacity">w3.css</a></p>
+    </div>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+    </script>
+
+</body>
+
 </html>
