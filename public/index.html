@@ -49,6 +49,34 @@
     color: black;
      border: 5px solid #0e0404 !important;
 }
+
+.logo-container {
+    background: url('sphere.png') no-repeat center center;
+    background-size: cover;
+    text-indent: -9999px; /* hides the text */
+    height: 80px; /* set the height of the logo */
+}
+/* Add this to your existing styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.w3-jumbo {
+    font-size: 64px!important;
+}
+.logo {
+    width: 30px; /* Adjust the width of the logo */
+    height: 30px; /* Adjust the height of the logo */
+    background: url('sphere.png') no-repeat center center;
+    background-size: cover;
+    margin-left: 10px; /* Adjust the margin between text and logo */
+}
+
+.w3-jumbo {
+  font-size: 55px !important; 
+}
+
+
     </style>
 </head>
 
@@ -60,6 +88,7 @@
         <a href="javascript:void(0)" onclick="w3_close()"
             class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
         <div class="w3-container">
+          
             <h3 class="w3-padding-64"><b>Zenith Design</b></h3>
         </div>
         <div class="w3-bar-block">
@@ -84,12 +113,13 @@
     <!-- !PAGE CONTENT! -->
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
-        <!-- Header -->
+                <!-- Header -->
         <div class="w3-container" style="margin-top:80px" id="showcase">
             <h1 class="w3-jumbo"><b>Crafted Interior Experience</b></h1>
             <h1 class="w3-xxxlarge w3-text-red"><b>Showcase.</b></h1>
             <hr style="width:50px;border:5px solid red" class="w3-round">
         </div>
+
 
         <!-- Photo grid (modal) -->
         <div class="w3-row-padding">
